@@ -13,4 +13,5 @@ def movie (movie_id):
     '''
     new movie page function that returns the movie details page and its data
     '''
-    return render_template('movie.html',id = movie_id)
+    title = 'movies 2020'
+    return render_template('movie.html',id = movie_id, title = title)
