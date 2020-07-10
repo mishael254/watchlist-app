@@ -6,8 +6,8 @@ def index():
     '''
     a view route page function that returns the index page and its data
     '''
-    message = 'hello dickface'
-    return render_template('index.html',message = message)
+    title = 'welcome to the best web movie review online'
+    return render_template('index.html',title = title)
 @app.route('/movie/<int:movie_id>')
 def movie (movie_id):
     '''
