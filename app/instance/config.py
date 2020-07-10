@@ -1,1 +1,0 @@
-MOVIE_API_KEY = '<https://api.themoviedb.org/3/movie/550?api_key=7fc17f781f7ad8fa7e2c2c1b211fcfe0>'
