@@ -5,10 +5,16 @@ from .models import movie
 Movie = movie.Movie
 
 #getting the API key
-api_key = app.config['MOVIE_API_KEY']
+
 
 # getting the movie base url
-base_url = app.config['MOVIE_API_BASE_URL']
+
+def configure_request(app):
+    global api_key,base_url
+    api_key = app.config['MOVIE_API_KEY']
+    base_url = app.config['MOVIE_API_BASE_URL']
+
+    
 
 def get_movies(category):
     '''
@@ -24,7 +30,7 @@ def get_movies(category):
         if get_movies_response['results']:
             movie_results_list = get_movies_response['results']
             movie_results = process_results(movie_results_list)
-            
+
             return movie_results
 
 def process_results(movie_list):
