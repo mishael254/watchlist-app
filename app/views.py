@@ -1,13 +1,18 @@
 from flask import render_template
 from app import app
+from.request import get_movies
 
 @app.route('/')
 def index():
     '''
     a view route page function that returns the index page and its data
     '''
+    # getting popular movies
+    popular_movies = get_movies('popular')
+    print(popular_movies)
+
     title = 'welcome to the best web movie review online'
-    return render_template('index.html',title = title)
+    return render_template('index.html',title = title,popular = popular_movies)
 @app.route('/movie/<int:movie_id>')
 def movie (movie_id):
     '''
