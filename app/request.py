@@ -1,19 +1,16 @@
 from app import app
 import urllib.request,json
 from .models import movie
+Movie = movie.Movie
 
 
 
 #getting the API key
-api_key = None
-base_url = None
+api_key = app.config['MOVIE_API_KEY']
+base_url = app.config['MOVIE_API_BASE_URL']
 
 # getting the movie base url
 
-def configure_request(app):
-    global api_key,base_url
-    api_key = app.config['MOVIE_API_KEY']
-    base_url = app.config['MOVIE_API_BASE_URL']
 
     
 
@@ -53,9 +50,9 @@ def process_results(movie_list):
         vote_average = movie_item.get('vote_average')
         vote_count = movie_item.get('vote_count')
 
-        if poster:
-            movie_object = Movie(id,title,overview,poster,vote_average,vote_count)
-            movie_results.append(movie_object)
+    if poster:
+        movie_object = Movie(id,title,overview,poster,vote_average,vote_count)
+        movie_results.append(movie_object)
 
     return movie_results
 
