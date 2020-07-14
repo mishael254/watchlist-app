@@ -1,21 +1,5 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf = 8">
-        {% if title  %}
-        <title>{{title}} ,{{id}}</title>
-        {% else %}
-        <title>movie list 2020!!</title>
-        {% endif %}
-    </head>
-    <body>
-        <h3>welcome to movie world</h3>
-        
-    </body>
-</html>
-
-
-
-
-
-
+{% extends 'base2.html' %}
+<!--content block-->
+{% block content %}
+<h3>welcome to movie list 2020</h3>
+{% endblock %}
