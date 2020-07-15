@@ -6,9 +6,20 @@
             {{super ()}}
             <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
         {%endblock%}
+        
+            
         <!--content block-->
 
         {% block content%}
+        <!--a search block-->
+        <div class="container">
+            <form>
+                <input type="text" name="movie_query" placeholder="search for a Movie" class="form-control">
+                <input type="submit" value="Submit" class="btn btn-default" >
+
+            </form>
+        </div>
+
         <!-- Popular movie -->
         <h3> Popular Movies</h3>
         <ul>
